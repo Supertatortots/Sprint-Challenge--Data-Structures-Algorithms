@@ -24,7 +24,10 @@ class BinarySearchTree {
 
   breadthFirstForEach(cb) {
     /* Your code here */
-
+    let nodes= [this];
+    //make a for loop that goes through the entire tree 
+    //applies CB
+    
   }
 
   insert(value) {
