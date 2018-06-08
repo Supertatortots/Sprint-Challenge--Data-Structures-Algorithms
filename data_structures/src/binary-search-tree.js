@@ -7,7 +7,19 @@ class BinarySearchTree {
 
   depthFirstForEach(cb) {
     /* Your code here */
-    
+    //grabs cb
+    cb(this.value);
+    //checks left and right for cb and invokes it
+    if (this.left) {
+      this
+        .left
+        .depthFirstForEach(cb);
+    }
+    if (this.right) {
+      this
+        .right
+        .depthFirstForEach(cb);
+    }
   }
 
   breadthFirstForEach(cb) {
@@ -21,13 +33,17 @@ class BinarySearchTree {
       if (!this.left) {
         this.left = newNode;
       } else {
-        this.left.insert(value);
+        this
+          .left
+          .insert(value);
       }
     } else if (value >= this.value) {
       if (!this.right) {
         this.right = newNode;
       } else {
-        this.right.insert(value);
+        this
+          .right
+          .insert(value);
       }
     }
   }
@@ -50,8 +66,9 @@ class BinarySearchTree {
   }
 
   getMax() {
-    if (!this) return null;
-
+    if (!this) 
+      return null;
+    
     let max = this.value;
     let current = this;
 
